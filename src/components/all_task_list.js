@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Table } from 'react-bootstrap';
+import { Table, Panel } from 'react-bootstrap';
 
 class AllTaskList extends Component {
     renderTasks() {
@@ -8,7 +8,6 @@ class AllTaskList extends Component {
         console.log('task to show', tasks);
         return (
             <Table responsive>
-                <caption>Basic Table Layout</caption>
                 <thead>
                     <tr>
                         <th>Task</th>
@@ -19,7 +18,7 @@ class AllTaskList extends Component {
                     {
                         tasks.map(task => {
                             return(
-                                <tr key={task.id}>
+                                <tr key={task.id} className="text-justify">
                                     <td>{task.task}</td>
                                     <td> Not implemented yet </td>
                                 </tr>
@@ -32,7 +31,9 @@ class AllTaskList extends Component {
     }
     render() {
         return(
-            <div>{this.renderTasks()}</div>
+            <Panel header='All Task List todo' bsStyle="primary">
+                {this.renderTasks()}
+            </Panel>
         );
     };
 }
