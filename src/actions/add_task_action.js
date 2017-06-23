@@ -1,4 +1,4 @@
-import { ADD_TASK } from '../contents';
+import { ADD_TASK } from '../constants';
 
 const addTask = (task) => {
     console.log('Hit action ->>> ', task);
