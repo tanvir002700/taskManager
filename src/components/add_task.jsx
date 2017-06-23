@@ -44,7 +44,7 @@ class AddTask extends Component {
 
 function mapDispatchToProps(dispatch) {
     console.log('mapDispatchToProps: ', dispatch);
-    return bindActionCreators({addTask: addTask}, dispatch);
+    return bindActionCreators({addTask}, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(AddTask);
