@@ -19,9 +19,9 @@ class AllTaskList extends Component {
                     {
                         tasks.map(task => {
                             return(
-                                <tr>
-                                    <td key={task.id}>{task.task}</td>
-                                    <td key={task.id+1}> Not implemented yet </td>
+                                <tr key={task.id}>
+                                    <td>{task.task}</td>
+                                    <td> Not implemented yet </td>
                                 </tr>
                             );
                         })
