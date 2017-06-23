@@ -13,10 +13,10 @@ Simple task manager app. Develop with react/redux.
     │   └── add_task_action.js
     ├── components
     │   ├── add_task.jsx
-    │   ├── all_task_list.js
+    │   ├── all_task_list.jsx
     │   ├── app.css
     │   └── app.jsx
-    ├── contents.js
+    ├── constants.js
     ├── index.css
     ├── index.js
     ├── logo.svg
