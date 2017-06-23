@@ -1,11 +1,11 @@
-import { ADD_REMINER } from '../contents';
+import { ADD_TASK } from '../contents';
 
-const addReminder = (task) => {
+const addTask = (task) => {
     console.log('Hit action ->>> ', task);
     return {
-        action: ADD_REMINER,
+        type: ADD_TASK,
         payload: task
     };
 };
 
-export default addReminder;
+export default addTask;

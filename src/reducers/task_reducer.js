@@ -1,4 +1,4 @@
-import { ADD_REMINDER } from '../contents';
+import { ADD_TASK } from '../contents';
 
 const task = (action) => {
     return {
@@ -9,10 +9,12 @@ const task = (action) => {
 
 const tasks = (state = [], action) => {
     let tasks = null;
+    console.log('Came to redurecs......');
     switch (action.type) {
-        case ADD_REMINDER:
+        case ADD_TASK:
             console.log('state before new add: ', state);
             tasks = [...state, task(action)];
+            console.log('New State: ',tasks);
             return tasks;
         default:
             return state;
