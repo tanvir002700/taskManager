@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Table, Panel } from 'react-bootstrap';
-import deleteTask from '../actions/delete_task_action';
+import activeTask from '../actions/active_task_acton';
 
 class CompleteTaskList extends Component {
 
@@ -9,6 +9,9 @@ class CompleteTaskList extends Component {
         return tasks.filter(task => task.status === 'complete');
     }
 
+    markActiveTask(id) {
+        this.props.activeTask(id);
+    }
     renderTasks() {
         const {tasks} = this.props.tasks;
         const activeTasks = this.allCompleteTask(tasks);
@@ -32,6 +35,7 @@ class CompleteTaskList extends Component {
                                 <td>
                                     <button
                                         className="btn btn-success"
+                                        onClick={() => this.markActiveTask(task.id)}
                                     >Incompolete</button>
                                 </td>
                             </tr>
@@ -57,4 +61,4 @@ function mapStateToProps(state) {
     return {tasks: state};
 }
 
-export default connect(mapStateToProps)(CompleteTaskList);
+export default connect(mapStateToProps, {activeTask})(CompleteTaskList);

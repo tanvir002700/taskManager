@@ -1,4 +1,4 @@
-import { ADD_TASK, DELETE_TASK, COMPLETE_TASK } from '../constants';
+import { ADD_TASK, DELETE_TASK, COMPLETE_TASK, ACTIVE_TASK } from '../constants';
 
 const task = (action) => {
     return {
@@ -25,6 +25,17 @@ const completeTask = (state, action) => {
     return tasks;
 };
 
+const activeTask = (state, action) => {
+    const tasks = state.map(task => {
+        if(task.id === action.payload) {
+            task.status = 'active';
+        }
+        return task;
+    });
+    console.log('new complete state: ', tasks);
+    return tasks;
+}
+
 const tasks = (state = [], action) => {
     let tasks = null;
     console.log('Came to redurecs......');
@@ -42,6 +53,9 @@ const tasks = (state = [], action) => {
             return tasks;
         case COMPLETE_TASK:
             tasks = completeTask(state, action);
+            return tasks;
+        case ACTIVE_TASK:
+            tasks = activeTask(state, action);
             return tasks;
         default:
             return state;
