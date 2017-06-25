@@ -7,7 +7,8 @@
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
-    "redux": "^3.7.0"
+    "redux": "^3.7.0",
+    "sfcookies": "^1.0.2"
   },
   "babel": {
     "presets": [
