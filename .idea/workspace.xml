@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cef3985-4bc2-463c-aaff-df87308158cc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/index_bundle.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/add_task_action.js" afterPath="$PROJECT_DIR$/src/actions/add_task_action.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/delete_task_action.js" afterPath="$PROJECT_DIR$/src/actions/delete_task_action.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/add_task.jsx" afterPath="$PROJECT_DIR$/src/components/add_task.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/all_task_list.jsx" afterPath="$PROJECT_DIR$/src/components/all_task_list.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/complete_task_list.jsx" afterPath="$PROJECT_DIR$/src/components/complete_task_list.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/task_reducer.js" afterPath="$PROJECT_DIR$/src/reducers/task_reducer.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -61,8 +55,8 @@
       <file leaf-file-name="add_task.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/add_task.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            <state relative-caret-position="15">
+              <caret line="1" column="38" lean-forward="false" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -166,6 +160,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="taskManager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taskManager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taskManager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -281,12 +289,12 @@
       <workItem from="1498369414613" duration="4785000" />
       <workItem from="1498399041170" duration="277000" />
       <workItem from="1498399446647" duration="1054000" />
-      <workItem from="1498400538275" duration="4469000" />
+      <workItem from="1498400538275" duration="4568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13358000" />
+    <option name="totallyTimeSpent" value="13457000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
@@ -626,8 +634,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/add_task.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        <state relative-caret-position="15">
+          <caret line="1" column="38" lean-forward="false" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
           <folding />
         </state>
       </provider>

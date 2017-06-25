@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import addTask from '../actions/add_task_action';
 
 class AddTask extends Component {
@@ -38,10 +37,6 @@ class AddTask extends Component {
             </div>
         );
     };
-}
-
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({addTask}, dispatch);
 }
 
 export default connect(null, {addTask})(AddTask);
