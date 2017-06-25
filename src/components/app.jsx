@@ -19,8 +19,11 @@ class App extends Component {
                     <Col xs={4} md={4}>
                         <AddTask/>
                     </Col>
-                    <Col xs={8} md={8}>
+                    <Col xs={4} md={4}>
                         <AllTaskList/>
+                    </Col>
+                    <Col xs={4} md={4}>
+
                     </Col>
                 </Row>
             </Grid>

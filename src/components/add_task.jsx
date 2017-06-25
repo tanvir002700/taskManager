@@ -17,6 +17,11 @@ class AddTask extends Component {
         this.props.addTask(this.state.task);
     }
 
+    removeTask(id) {
+        console.log('Need to add action to add this task (props): ', this.props);
+        console.log('Need to add action to add this task: (state)', this.state);
+    }
+
     render() {
         return(
             <div>
@@ -47,4 +52,4 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({addTask}, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(AddTask);
+export default connect(null, {addTask})(AddTask);
