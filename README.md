@@ -32,10 +32,12 @@ For transform bundle js run:
     │   ├── add_task_action.js
     │   ├── complete_task_action.js
     │   └── delete_task_action.js
+    ├── assets
+    │   └── stylesheets
+    │       └── app.css
     ├── components
     │   ├── add_task.jsx
     │   ├── all_task_list.jsx
-    │   ├── app.css
     │   ├── app.jsx
     │   └── complete_task_list.jsx
     ├── constants.js
@@ -45,5 +47,6 @@ For transform bundle js run:
     └── reducers
         ├── index.js
         └── task_reducer.js
+
 
  ```
