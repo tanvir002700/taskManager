@@ -4,6 +4,7 @@ import './app.css';
 import AddTask from './add_task';
 import AllTaskList from './all_task_list';
 import { Grid, Row, Col } from 'react-bootstrap';
+import CompleteTaskList from "./complete_task_list";
 
 class App extends Component {
   render() {
@@ -19,8 +20,11 @@ class App extends Component {
                     <Col xs={4} md={4}>
                         <AddTask/>
                     </Col>
-                    <Col xs={8} md={8}>
+                    <Col xs={4} md={4}>
                         <AllTaskList/>
+                    </Col>
+                    <Col xs={4} md={4}>
+                        <CompleteTaskList/>
                     </Col>
                 </Row>
             </Grid>

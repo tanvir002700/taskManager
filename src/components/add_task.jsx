@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import addTask from '../actions/add_task_action';
 
 class AddTask extends Component {
@@ -12,8 +11,6 @@ class AddTask extends Component {
     }
 
     addTaskToList() {
-        console.log('Need to add action to add this task (props): ', this.props);
-        console.log('Need to add action to add this task: (state)', this.state);
         this.props.addTask(this.state.task);
     }
 
@@ -42,9 +39,4 @@ class AddTask extends Component {
     };
 }
 
-function mapDispatchToProps(dispatch) {
-    console.log('mapDispatchToProps: ', dispatch);
-    return bindActionCreators({addTask}, dispatch);
-}
-
-export default connect(null, mapDispatchToProps)(AddTask);
+export default connect(null, {addTask})(AddTask);
