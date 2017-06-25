@@ -2,18 +2,26 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Table, Panel } from 'react-bootstrap';
 import deleteTask from '../actions/delete_task_action';
+import completeTask from '../actions/complete_task_action';
 
 class AllTaskList extends Component {
 
+    allActiveTaskList(tasks) {
+        return tasks.filter(task => task.status === 'active');
+    }
+
+    markTaskComplete(id) {
+        console.log('came here for mark complete: ' + id, this.props);
+        this.props.completeTask(id);
+    }
+
     removeTask(id) {
-        console.log('Need to add action to add this task (props): ', this.props);
-        console.log('Need to add action to add this task: (state)', this.state);
-        console.log("id for delete: " + id);
         this.props.deleteTask(id);
     }
 
     renderTasks() {
         const {tasks} = this.props.tasks;
+        const activeTasks = this.allActiveTaskList(tasks);
         return (
             <Table responsive>
                 <thead>
@@ -21,15 +29,22 @@ class AllTaskList extends Component {
                         <th>Task</th>
                         <th>Task Status</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        tasks.map(task => {
+                        activeTasks.map(task => {
                             return(
                                 <tr key={task.id} className="text-justify">
                                     <td>{task.task}</td>
                                     <td> Not implemented yet </td>
+                                    <td>
+                                        <button
+                                            className="btn btn-success"
+                                            onClick={() => this.markTaskComplete(task.id)}
+                                        >Done</button>
+                                    </td>
                                     <td>
                                         <button
                                             className="btn btn-danger"
@@ -58,4 +73,4 @@ function mapStateToProps(state) {
     return {tasks: state}
 }
 
-export default connect(mapStateToProps, { deleteTask })(AllTaskList);
+export default connect(mapStateToProps, { deleteTask, completeTask })(AllTaskList);
