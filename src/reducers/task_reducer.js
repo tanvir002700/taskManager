@@ -1,45 +1,13 @@
-import {ADD_TASK, DELETE_TASK, COMPLETE_TASK, ACTIVE_TASK} from '../constants';
-import {bake_cookie, read_cookie} from 'sfcookies';
-
-const task = (action) => {
-    return {
-        task: action.payload,
-        status: 'active',
-        id: Math.random()
-    };
-};
-
-const removeTask = (state, action) => {
-    const tasks = state.filter(task => task.id !== action.payload);
-    return tasks;
-};
-
-const completeTask = (state, action) => {
-    const tasks = state.map(task => {
-        if (task.id === action.payload) {
-            task.status = 'complete';
-        }
-        return task;
-    });
-    return tasks;
-};
-
-const activeTask = (state, action) => {
-    const tasks = state.map(task => {
-        if (task.id === action.payload) {
-            task.status = 'active';
-        }
-        return task;
-    });
-    return tasks;
-};
+import { ADD_TASK, DELETE_TASK, COMPLETE_TASK, ACTIVE_TASK } from '../constants';
+import { createTask, removeTask, completeTask, activeTask } from './helper/task_helper';
+import { bake_cookie, read_cookie } from 'sfcookies';
 
 const tasks = (state = [], action) => {
     let tasks = [];
     state = read_cookie('tasks');
     switch (action.type) {
         case ADD_TASK:
-            tasks = [...state, task(action)];
+            tasks = [...state, createTask(action)];
             break;
         case DELETE_TASK:
             tasks = removeTask(state, action);
