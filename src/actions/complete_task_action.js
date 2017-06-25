@@ -1,4 +1,4 @@
-import { COMPLETE_TASK } from '../constants';
+import {COMPLETE_TASK} from '../constants';
 
 function completeTask(id) {
     return {

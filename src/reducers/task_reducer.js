@@ -1,5 +1,5 @@
-import { ADD_TASK, DELETE_TASK, COMPLETE_TASK, ACTIVE_TASK } from '../constants';
-import { bake_cookie, read_cookie } from 'sfcookies';
+import {ADD_TASK, DELETE_TASK, COMPLETE_TASK, ACTIVE_TASK} from '../constants';
+import {bake_cookie, read_cookie} from 'sfcookies';
 
 const task = (action) => {
     return {
@@ -10,13 +10,13 @@ const task = (action) => {
 };
 
 const removeTask = (state, action) => {
-    const tasks = state.filter( task => task.id !== action.payload);
+    const tasks = state.filter(task => task.id !== action.payload);
     return tasks;
 };
 
 const completeTask = (state, action) => {
     const tasks = state.map(task => {
-        if(task.id === action.payload) {
+        if (task.id === action.payload) {
             task.status = 'complete';
         }
         return task;
@@ -26,13 +26,13 @@ const completeTask = (state, action) => {
 
 const activeTask = (state, action) => {
     const tasks = state.map(task => {
-        if(task.id === action.payload) {
+        if (task.id === action.payload) {
             task.status = 'active';
         }
         return task;
     });
     return tasks;
-}
+};
 
 const tasks = (state = [], action) => {
     let tasks = [];

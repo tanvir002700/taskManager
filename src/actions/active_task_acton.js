@@ -1,4 +1,4 @@
-import { ACTIVE_TASK } from '../constants';
+import {ACTIVE_TASK} from '../constants';
 
 const activeTask = (id) => {
     return {

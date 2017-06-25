@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Table, Panel } from 'react-bootstrap';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {Table, Panel} from 'react-bootstrap';
 import deleteTask from '../actions/delete_task_action';
 import completeTask from '../actions/complete_task_action';
 
@@ -24,42 +24,45 @@ class AllTaskList extends Component {
         return (
             <Table responsive>
                 <thead>
-                    <tr>
-                        <th>Task</th>
-                        <th>Task Status</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
+                <tr>
+                    <th>Task</th>
+                    <th>Task Status</th>
+                    <th></th>
+                    <th></th>
+                </tr>
                 </thead>
                 <tbody>
-                    {
-                        activeTasks.map(task => {
-                            return(
-                                <tr key={task.id} className="text-justify">
-                                    <td>{task.task}</td>
-                                    <td> Not implemented yet </td>
-                                    <td>
-                                        <button
-                                            className="btn btn-success"
-                                            onClick={() => this.markTaskComplete(task.id)}
-                                        >Done</button>
-                                    </td>
-                                    <td>
-                                        <button
-                                            className="btn btn-danger"
-                                            onClick={() => this.removeTask(task.id)}
-                                        >Remove Task</button>
-                                    </td>
-                                </tr>
-                            );
-                        })
-                    }
+                {
+                    activeTasks.map(task => {
+                        return (
+                            <tr key={task.id} className="text-justify">
+                                <td>{task.task}</td>
+                                <td> Not implemented yet</td>
+                                <td>
+                                    <button
+                                        className="btn btn-success"
+                                        onClick={() => this.markTaskComplete(task.id)}
+                                    >Done
+                                    </button>
+                                </td>
+                                <td>
+                                    <button
+                                        className="btn btn-danger"
+                                        onClick={() => this.removeTask(task.id)}
+                                    >Remove Task
+                                    </button>
+                                </td>
+                            </tr>
+                        );
+                    })
+                }
                 </tbody>
             </Table>
         );
     }
+
     render() {
-        return(
+        return (
             <Panel header='All Task List todo' bsStyle="primary">
                 {this.renderTasks()}
             </Panel>
@@ -71,4 +74,4 @@ function mapStateToProps(state) {
     return {tasks: state}
 }
 
-export default connect(mapStateToProps, { deleteTask, completeTask })(AllTaskList);
+export default connect(mapStateToProps, {deleteTask, completeTask})(AllTaskList);

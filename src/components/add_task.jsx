@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import addTask from '../actions/add_task_action';
 
 class AddTask extends Component {
@@ -15,7 +15,7 @@ class AddTask extends Component {
     }
 
     render() {
-        return(
+        return (
             <div>
                 <div className="form-inline">
                     <div className="form-group">

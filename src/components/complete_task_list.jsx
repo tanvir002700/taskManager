@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Table, Panel } from 'react-bootstrap';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {Table, Panel} from 'react-bootstrap';
 import activeTask from '../actions/active_task_acton';
 
 class CompleteTaskList extends Component {
@@ -12,6 +12,7 @@ class CompleteTaskList extends Component {
     markActiveTask(id) {
         this.props.activeTask(id);
     }
+
     renderTasks() {
         const {tasks} = this.props.tasks;
         const activeTasks = this.allCompleteTask(tasks);
@@ -28,15 +29,16 @@ class CompleteTaskList extends Component {
                 <tbody>
                 {
                     activeTasks.map(task => {
-                        return(
+                        return (
                             <tr key={task.id} className="text-justify">
                                 <td>{task.task}</td>
-                                <td> Not implemented yet </td>
+                                <td> Not implemented yet</td>
                                 <td>
                                     <button
                                         className="btn btn-success"
                                         onClick={() => this.markActiveTask(task.id)}
-                                    >Incompolete</button>
+                                    >Incompolete
+                                    </button>
                                 </td>
                             </tr>
                         );
@@ -46,8 +48,9 @@ class CompleteTaskList extends Component {
             </Table>
         );
     }
+
     render() {
-        return(
+        return (
             <Panel header='All Task List todo' bsStyle="primary">
                 {this.renderTasks()}
             </Panel>

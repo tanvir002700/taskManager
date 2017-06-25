@@ -1,4 +1,4 @@
-import { ADD_TASK } from '../constants';
+import {ADD_TASK} from '../constants';
 
 const addTask = (task) => {
     return {
