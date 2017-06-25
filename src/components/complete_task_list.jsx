@@ -57,7 +57,6 @@ class CompleteTaskList extends Component {
 
 
 function mapStateToProps(state) {
-    console.log('state form complete task list: ', state);
     return {tasks: state};
 }
 

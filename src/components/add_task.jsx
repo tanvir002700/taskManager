@@ -12,14 +12,7 @@ class AddTask extends Component {
     }
 
     addTaskToList() {
-        console.log('Need to add action to add this task (props): ', this.props);
-        console.log('Need to add action to add this task: (state)', this.state);
         this.props.addTask(this.state.task);
-    }
-
-    removeTask(id) {
-        console.log('Need to add action to add this task (props): ', this.props);
-        console.log('Need to add action to add this task: (state)', this.state);
     }
 
     render() {
@@ -48,7 +41,6 @@ class AddTask extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-    console.log('mapDispatchToProps: ', dispatch);
     return bindActionCreators({addTask}, dispatch);
 }
 

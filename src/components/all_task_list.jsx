@@ -11,7 +11,6 @@ class AllTaskList extends Component {
     }
 
     markTaskComplete(id) {
-        console.log('came here for mark complete: ' + id, this.props);
         this.props.completeTask(id);
     }
 
@@ -69,7 +68,6 @@ class AllTaskList extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log('mapStateToProps: ', state);
     return {tasks: state}
 }
 
