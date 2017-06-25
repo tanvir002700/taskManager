@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
-import './app.css';
+import '../assets/stylesheets/app.css';
 import AddTask from './add_task';
 import AllTaskList from './all_task_list';
 import { Grid, Row, Col } from 'react-bootstrap';
