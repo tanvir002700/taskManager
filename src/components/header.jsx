@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
 import AppBar from 'material-ui/AppBar';
+import '../assets/stylesheets/header.css';
 
-class Layout extends Component {
+class Header extends Component {
     render() {
         return(
             <div>
                 <AppBar
                     title="Goal Manager"
-                    iconClassNameRight="muidocs-icon-navigation-expand-more"
-                    onLeftIconButtonTouchTap={this.handleToggle}
+                    showMenuIconButton={false}
+                    className="app-header"
                 />
             </div>
         );
     }
 }
 
-export default Layout;
+export default Header;

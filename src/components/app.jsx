@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import tasks from '../modules/tasks';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Layout from './layout';
+import Header from './header';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
 
@@ -38,7 +38,7 @@ class App extends Component {
             <MuiThemeProvider>
                 <div>
 
-                    <Layout/>
+                    <Header/>
 
                     <Tabs
                         onChange={this.handleChange}
