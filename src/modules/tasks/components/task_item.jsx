@@ -17,8 +17,6 @@ class TaskItem extends Component {
 
     render() {
         const {task} = this.props;
-        console.log('Task from task item props: ', this.props);
-        console.log('Task from task item: ', task);
         let deleteButton = null;
         if(this.props.deleteButton) {
             deleteButton = (<div className="form-group">
@@ -38,6 +36,7 @@ class TaskItem extends Component {
                 </div>
             );
         }
+
         return(
             <li key={task.id}>
                 {task.task} {task.completed}
