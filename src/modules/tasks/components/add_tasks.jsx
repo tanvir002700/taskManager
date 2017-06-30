@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {add} from '../actions';
+import TextField from 'material-ui/TextField';
 
 class AddTasks extends Component {
     constructor(props) {
@@ -21,9 +22,10 @@ class AddTasks extends Component {
                 <h2>Add Task to Your List</h2>
                 <div className="form-inline">
                     <div className="form-group">
-                        <input
-                            type="text"
-                            className="form-control"
+                        <TextField
+                            hintText="Task..."
+                            floatingLabelText="Add your task description"
+                            floatingLabelFixed={false}
                             onChange={event => this.setState({task: event.target.value})}
                             value={this.state.task}
                         />
