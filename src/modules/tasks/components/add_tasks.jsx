@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {add} from '../actions';
 import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+import '../assets/stylesheets/add_task.css';
 
 class AddTasks extends Component {
     constructor(props) {
@@ -18,7 +20,7 @@ class AddTasks extends Component {
 
     render() {
         return(
-            <div>
+            <div className="add-task">
                 <h2>Add Task to Your List</h2>
                 <div className="form-inline">
                     <div className="form-group">
@@ -29,7 +31,11 @@ class AddTasks extends Component {
                             onChange={event => this.setState({task: event.target.value})}
                             value={this.state.task}
                         />
-                        <button type="button" onClick={() => this.addTask()} className="form-control">Add</button>
+                        <RaisedButton
+                            label="Primary"
+                            primary={true}
+                            onTouchTap={() => this.addTask()}
+                        />
                     </div>
                 </div>
             </div>

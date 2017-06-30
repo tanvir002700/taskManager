@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {complete, destroy} from '../actions';
 import { createStructuredSelector } from 'reselect';
-
 import { getAll } from '../selectors';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 
 class TaskItem extends Component {
     markComplete(id) {
@@ -19,30 +21,45 @@ class TaskItem extends Component {
         const {task} = this.props;
         let deleteButton = null;
         if(this.props.deleteButton) {
-            deleteButton = (<div className="form-group">
-                <button type="button"
-                        onClick={() => this.destroy(task.id)}
-                >Delete</button>
-            </div>);
+            deleteButton = (
+                <RaisedButton
+                    label="Delete"
+                    secondary={true}
+                    onTouchTap={() => this.destroy(task.id)}
+                />
+            );
         }
 
         let completeButton = null;
-        if(this.props.completeButton) {
+        if(task.completed == 'false') {
             completeButton = (
-                <div className="form-group">
-                    <button type="button"
-                            onClick={() => this.markComplete(task.id)}
-                    >Complete</button>
-                </div>
+                <RaisedButton
+                    label="Complete"
+                    primary={true}
+                    onTouchTap={() => this.markComplete(task.id)}
+                />
             );
         }
 
         return(
-            <li key={task.id}>
-                {task.task} {task.completed}
-                {completeButton}
-                {deleteButton}
-            </li>
+            <Card>
+                <CardHeader
+                    title={task.task}
+                    subtitle="not implementated yet"
+                    actAsExpander={true}
+                    showExpandableButton={true}
+                />
+                <CardActions>
+                    {deleteButton}
+                    {completeButton}
+                </CardActions>
+                <CardText expandable={true}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+                    Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
+                    Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+                </CardText>
+            </Card>
         );
     }
 }

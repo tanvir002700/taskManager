@@ -20,15 +20,13 @@ class ActiveTasksList extends Component {
         return(
             <div>
                 <h2>Render from All Active Task List</h2>
-                <ol>
-                    {
-                        active_tasks.map((task,key) => {
-                            return (
-                                <TaskItem task={task} key={key} deleteButton={true} completeButton={true}/>
-                            );
-                        })
-                    }
-                </ol>
+                {
+                    active_tasks.map((task,key) => {
+                        return (
+                            <TaskItem task={task} key={key} deleteButton={true} completeButton={true}/>
+                        );
+                    })
+                }
             </div>
         );
     }

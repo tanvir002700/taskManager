@@ -20,15 +20,13 @@ class CompleteTasksList extends Component {
         return(
             <div>
                 <h2>Render from All Complete Task List</h2>
-                <ol>
-                    {
-                        complete_tasks.map((task,key) => {
-                            return (
-                                <TaskItem task={task} key={key} deleteButton={true}/>
-                            );
-                        })
-                    }
-                </ol>
+                {
+                    complete_tasks.map((task,key) => {
+                        return (
+                            <TaskItem task={task} key={key} deleteButton={true}/>
+                        );
+                    })
+                }
             </div>
         );
     }

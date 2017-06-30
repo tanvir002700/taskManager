@@ -4,6 +4,8 @@ import { createStructuredSelector } from 'reselect';
 import { getAll } from '../selectors';
 import {complete, destroy} from '../actions';
 import TaskItem from './task_item';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
 
 class AllTasksList extends Component {
 
@@ -14,15 +16,13 @@ class AllTasksList extends Component {
             <div>
                 <h2>Render from All Task List</h2>
                 <h1>count {tasks.length}</h1>
-                <ol>
-                    {
-                        tasks.map((task,key) => {
-                            return (
-                                <TaskItem task={task} key={key} deleteButton={true} completeButton={true}/>
-                            );
-                        })
-                    }
-                </ol>
+                {
+                    tasks.map((task,key) => {
+                        return (
+                            <TaskItem task={task} key={key} deleteButton={true} completeButton={true}/>
+                        );
+                    })
+                }
             </div>
         );
     }
