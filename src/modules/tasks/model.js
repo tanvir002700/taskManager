@@ -4,6 +4,8 @@ export default Task = {
     completed: 'boolean'
 };
 
+export default State = [];
+
 export const filterCompleted = tasks => tasks.filter(t => t.completed);
 
 export const filterActive = tasks => tasks.filter(t => !t.completed);
