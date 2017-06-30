@@ -1,4 +1,5 @@
 # Task Manager
+<a href="https://codeclimate.com/github/codeclimate/codeclimate"><img src="https://codeclimate.com/github/tanvir002700/taskManager/badges/gpa.svg" /></a>
 
 Simple task manager app. Develop with react/redux.
 
@@ -27,26 +28,27 @@ For transform bundle js run:
  following structure maintain for redux integration:
  ```
     src
-    ├── actions
-    │   ├── active_task_acton.js
-    │   ├── add_task_action.js
-    │   ├── complete_task_action.js
-    │   └── delete_task_action.js
     ├── assets
+    │   ├── images
+    │   │   └── logo.svg
     │   └── stylesheets
-    │       └── app.css
-    ├── components
-    │   ├── add_task.jsx
-    │   ├── all_task_list.jsx
-    │   ├── app.jsx
-    │   └── complete_task_list.jsx
-    ├── constants.js
-    ├── index.css
+    │       ├── app.css
+    │       └── index.css
     ├── index.js
-    ├── logo.svg
-    └── reducers
-        ├── index.js
-        └── task_reducer.js
-
-
+    ├── modules
+    │   └── tasks
+    │       ├── action_types.js
+    │       ├── actions.js
+    │       ├── assets
+    │       │   └── stylesheets
+    │       ├── components
+    │       │   ├── add_tasks.jsx
+    │       │   ├── all_tasks_list.jsx
+    │       │   └── index.js
+    │       ├── constants.js
+    │       ├── index.js
+    │       ├── model.js
+    │       ├── reducer.js
+    │       └── selectors.js
+    └── root_reducer.js
  ```
