@@ -1,6 +1,6 @@
-import * as action from './actionTypes';
+import * as t from './action_types';
 
 export const add = (text) => ({
-    type: action.ADD,
+    type: t.ADD,
     payload: { text }
 });
