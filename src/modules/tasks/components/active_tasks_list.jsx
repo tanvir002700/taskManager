@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { getActive } from '../selectors';
 import {complete, destroy} from '../actions';
+import TaskItem from './task_item';
 
 class ActiveTasksList extends Component {
     markComplete(id) {
@@ -22,19 +23,8 @@ class ActiveTasksList extends Component {
                 <ol>
                     {
                         active_tasks.map((task,key) => {
-                            return (<li key={task.id}>
-                                    {task.task} {task.complete}
-                                    <div className="form-group">
-                                        <button type="button"
-                                                onClick={() => this.markComplete(task.id)}
-                                        >Complete</button>
-                                    </div>
-                                    <div className="form-group">
-                                        <button type="button"
-                                                onClick={() => this.destroy(task.id)}
-                                        >Delete</button>
-                                    </div>
-                                </li>
+                            return (
+                                <TaskItem task={task} key={key} deleteButton={true} completeButton={true}/>
                             );
                         })
                     }
