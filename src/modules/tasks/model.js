@@ -27,6 +27,6 @@ export const destroy = (state, id) => {
 
 export const initial_state = [];
 
-export const filterCompleted = tasks => tasks.filter(t => t.completed !== 'true');
+export const filterCompleted = tasks => tasks.filter(t => t.completed === 'true');
 
 export const filterActive = tasks => tasks.filter(t => t.completed === 'false');

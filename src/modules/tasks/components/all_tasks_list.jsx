@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { getAll, getActive } from '../selectors';
+import { getAll } from '../selectors';
 import {complete, destroy} from '../actions';
 
 class AllTasksList extends Component {
@@ -46,8 +46,7 @@ class AllTasksList extends Component {
 
 function mapStateToProps() {
     return createStructuredSelector({
-        tasks: getAll,
-        active_tasks: getActive
+        tasks: getAll
     });
 }
 export default connect(mapStateToProps, {complete, destroy})(AllTasksList);

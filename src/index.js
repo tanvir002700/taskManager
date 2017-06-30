@@ -5,7 +5,7 @@ import {createStore} from 'redux';
 import tasks from './modules/tasks';
 import allReducers from './root_reducer';
 
-const {AddTasks, AllTasksList, ActiveTasksList} = tasks.components;
+const {AddTasks, AllTasksList, ActiveTasksList, CompleteTasksList} = tasks.components;
 
 const store = createStore(allReducers);
 
@@ -15,6 +15,7 @@ ReactDOM.render(
            <AddTasks/>
            <AllTasksList/>
            <ActiveTasksList/>
+           <CompleteTasksList/>
        </div>
     </Provider>,
         document.getElementById('root')
