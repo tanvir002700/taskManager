@@ -2,11 +2,15 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { getAll } from '../selectors';
-import {complete} from '../actions';
+import {complete, destroy} from '../actions';
 
 class AllTasksList extends Component {
     markComplete(id) {
         this.props.complete(id);
+    }
+
+    destroy(id) {
+        this.props.destroy(id);
     }
 
     render() {
@@ -24,6 +28,11 @@ class AllTasksList extends Component {
                                         onClick={() => this.markComplete(task.id)}
                                     >Complete</button>
                                 </div>
+                                <div className="form-group">
+                                    <button type="button"
+                                            onClick={() => this.destroy(task.id)}
+                                    >Delete</button>
+                                </div>
                                 </li>
                             );
                         })
@@ -39,4 +48,4 @@ function mapStateToProps() {
         tasks: getAll
     });
 }
-export default connect(mapStateToProps, {complete})(AllTasksList);
+export default connect(mapStateToProps, {complete, destroy})(AllTasksList);

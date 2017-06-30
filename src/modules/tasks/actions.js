@@ -14,3 +14,10 @@ export const complete = (id) => {
         payload: id
     }
 };
+
+export const destroy = (id) => {
+    return {
+        type: t.DELETE,
+        payload: id
+    }
+};

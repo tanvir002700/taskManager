@@ -1,4 +1,4 @@
-const create = task => {
+const taskObject = task => {
     return {
         id: Math.random(),
         task: task,
@@ -6,18 +6,24 @@ const create = task => {
     };
 };
 
-export const createTask = (state, task) => {
-    return [...state, create(task)];
+export const create = (state, task) => {
+    return [...state, taskObject(task)];
 }
 
 export const makeComplete = (state , id) => {
     return state.map(task => {
-        if(task.id == id) {
+        if(task.id === id) {
             task.complete = 'true';
         }
         return task;
     });
 }
+
+export const destroy = (state, id) => {
+    return state.filter(task => {
+        return task.id !== id;
+    });
+};
 
 export const State = [];
 
