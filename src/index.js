@@ -6,7 +6,6 @@ import tasks from './modules/tasks';
 import allReducers from './root_reducer';
 
 const {AddTasks, AllTasksList} = tasks.components;
-console.log('inspect: ',AddTasks);
 
 const store = createStore(allReducers);
 

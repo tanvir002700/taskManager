@@ -1,12 +1,16 @@
-class Task {
-    constructor(task) {
-        this.id = 0;
-        this.task = task;
-        this.complete = false;
-    }
+export const create = task => {
+    return {
+        id: Math.random(),
+        task: task,
+        complete: 'false'
+    };
 }
 
-export default Task;
+export const makeComplete = (task) => {
+    let object = task;
+    task.complete = 'true';
+    return task;
+}
 
 export const State = [];
 

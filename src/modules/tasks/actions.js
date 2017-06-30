@@ -7,3 +7,10 @@ export const add = (text) => {
         payload: text
     };
 };
+
+export const complete = (id) => {
+    return {
+        type: t.COMPLETE,
+        payload: id
+    }
+};

@@ -1,9 +1,14 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { getAll, getActive, getCompleted } from '../selectors';
+import { getAll } from '../selectors';
+import {complete} from '../actions';
 
 class AllTasksList extends Component {
+    markComplete(id) {
+        this.props.complete(id);
+    }
+
     render() {
         const {tasks} = this.props;
         return(
@@ -12,7 +17,15 @@ class AllTasksList extends Component {
                 <ol>
                     {
                         tasks.map((task,key) => {
-                            return <li key={key}>{task.task}</li>
+                            return (<li key={task.id}>
+                                {task.task} {task.complete}
+                                <div className="form-group">
+                                    <button type="button"
+                                        onClick={() => this.markComplete(task.id)}
+                                    >Complete</button>
+                                </div>
+                                </li>
+                            );
                         })
                     }
                 </ol>
@@ -23,9 +36,7 @@ class AllTasksList extends Component {
 
 function mapStateToProps() {
     return createStructuredSelector({
-        tasks: getAll,
-        active: getActive,
-        complete: getCompleted
+        tasks: getAll
     });
 }
-export default connect(mapStateToProps, null)(AllTasksList);
+export default connect(mapStateToProps, {complete})(AllTasksList);
