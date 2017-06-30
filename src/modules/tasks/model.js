@@ -25,7 +25,7 @@ export const destroy = (state, id) => {
     });
 };
 
-export const State = [];
+export const initial_state = [];
 
 export const filterCompleted = tasks => tasks.filter(t => t.completed);
 

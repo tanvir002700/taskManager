@@ -1,7 +1,7 @@
 import * as t from './action_types';
 import * as Task from './model';
 
-export default (state = [], action) => {
+export default (state = Task.initial_state, action) => {
     let new_state = null;
     switch (action.type) {
         case t.ADD:
