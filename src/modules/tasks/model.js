@@ -1,10 +1,14 @@
-export default Task = {
-    id: 0,
-    text: 'string',
-    completed: 'boolean'
-};
+class Task {
+    constructor(task) {
+        this.id = 0;
+        this.task = task;
+        this.complete = false;
+    }
+}
 
-export default State = [];
+export default Task;
+
+export const State = [];
 
 export const filterCompleted = tasks => tasks.filter(t => t.completed);
 
