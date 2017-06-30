@@ -12,6 +12,7 @@ class AddTasks extends Component {
 
     addTask() {
         this.props.add(this.state.task);
+        this.setState({task: ''});
     }
 
     render() {
@@ -24,6 +25,7 @@ class AddTasks extends Component {
                             type="text"
                             className="form-control"
                             onChange={event => this.setState({task: event.target.value})}
+                            value={this.state.task}
                         />
                         <button type="button" onClick={() => this.addTask()} className="form-control">Add</button>
                     </div>

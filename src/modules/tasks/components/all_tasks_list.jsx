@@ -5,10 +5,18 @@ import { getAll, getActive, getCompleted } from '../selectors';
 
 class AllTasksList extends Component {
     render() {
-        console.log(this.props);
-        // console.log(tasks);
+        const {tasks} = this.props;
         return(
-            <div>Render from All Task List</div>
+            <div>
+                <h2>Render from All Task List</h2>
+                <ol>
+                    {
+                        tasks.map((task,key) => {
+                            return <li key={key}>{task.task}</li>
+                        })
+                    }
+                </ol>
+            </div>
         );
     }
 }
@@ -18,7 +26,6 @@ function mapStateToProps() {
         tasks: getAll,
         active: getActive,
         complete: getCompleted
-    })
+    });
 }
-export default connect(
-    mapStateToProps, null)(AllTasksList);
+export default connect(mapStateToProps, null)(AllTasksList);
