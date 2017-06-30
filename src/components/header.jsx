@@ -7,7 +7,7 @@ class Header extends Component {
         return(
             <div>
                 <AppBar
-                    title="Goal Manager"
+                    title="Task Manager Pro"
                     showMenuIconButton={false}
                     className="app-header"
                 />
