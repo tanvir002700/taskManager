@@ -2,7 +2,7 @@ const taskObject = task => {
     return {
         id: Math.random(),
         task: task,
-        complete: 'false'
+        completed: 'false'
     };
 };
 
@@ -13,7 +13,7 @@ export const create = (state, task) => {
 export const makeComplete = (state , id) => {
     return state.map(task => {
         if(task.id === id) {
-            task.complete = 'true';
+            task.completed = 'true';
         }
         return task;
     });
@@ -27,6 +27,6 @@ export const destroy = (state, id) => {
 
 export const initial_state = [];
 
-export const filterCompleted = tasks => tasks.filter(t => t.completed);
+export const filterCompleted = tasks => tasks.filter(t => t.completed !== 'true');
 
-export const filterActive = tasks => tasks.filter(t => !t.completed);
+export const filterActive = tasks => tasks.filter(t => t.completed === 'false');
