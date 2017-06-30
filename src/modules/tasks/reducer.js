@@ -6,12 +6,11 @@ export default (state = [], action) => {
     switch (action.type) {
         case t.ADD:
             console.log('State before update', state);
-            new_state = [...state, new Task.create(action.payload)];
+            new_state = Task.createTask(state, action.payload);
             console.log('State after update', new_state);
             return new_state;
         case t.COMPLETE:
-            new_state = [...state];
-            Task.makeComplete(new_state[0]);
+            new_state = Task.makeComplete(state, action.payload);
             return new_state;
         default:
             return state;

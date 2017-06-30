@@ -1,15 +1,22 @@
-export const create = task => {
+const create = task => {
     return {
         id: Math.random(),
         task: task,
         complete: 'false'
     };
+};
+
+export const createTask = (state, task) => {
+    return [...state, create(task)];
 }
 
-export const makeComplete = (task) => {
-    let object = task;
-    task.complete = 'true';
-    return task;
+export const makeComplete = (state , id) => {
+    return state.map(task => {
+        if(task.id == id) {
+            task.complete = 'true';
+        }
+        return task;
+    });
 }
 
 export const State = [];
