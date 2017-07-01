@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app';
-import './assets/stylesheets/index.css';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-import allReducers from './reducers';
+import allReducers from './root_reducer';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import App from './components/app';
+
+injectTapEventPlugin();
 
 const store = createStore(allReducers);
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
-    </Provider>, document.getElementById('root')
+        <App/>
+    </Provider>,
+        document.getElementById('root')
 );

@@ -1,35 +1,45 @@
 import React, {Component} from 'react';
-import logo from '../assets/images/logo.svg';
+import tasks from '../modules/tasks';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Header from './header';
 import '../assets/stylesheets/app.css';
-import AddTask from './add_task';
-import AllTaskList from './all_task_list';
-import {Grid, Row, Col} from 'react-bootstrap';
-import CompleteTaskList from "./complete_task_list";
+
+const {TaskCanvas} = tasks.components;
+
+const styles = {
+    headline: {
+        fontSize: 24,
+        paddingTop: 16,
+        marginBottom: 12,
+        fontWeight: 400,
+    },
+    slide: {
+        padding: 10,
+    },
+};
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            slideIndex: 0,
+        };
+    }
+
+    handleChange = (value) => {
+        this.setState({
+            slideIndex: value,
+        });
+    };
+
     render() {
-        return (
-            <div className="App">
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h2>Welcome to Task Manager</h2>
+        return(
+            <MuiThemeProvider>
+                <div>
+                    <Header/>
+                    <TaskCanvas/>
                 </div>
-
-                <Grid>
-                    <Row>
-                        <Col xs={4} md={4}>
-                            <AddTask/>
-                        </Col>
-                        <Col xs={4} md={4}>
-                            <AllTaskList/>
-                        </Col>
-                        <Col xs={4} md={4}>
-                            <CompleteTaskList/>
-                        </Col>
-                    </Row>
-                </Grid>
-
-            </div>
+            </MuiThemeProvider>
         );
     }
 }

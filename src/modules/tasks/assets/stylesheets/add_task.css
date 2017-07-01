@@ -1,0 +1,11 @@
+.add-task{
+    text-align: center;
+}
+
+.add-button{
+    float: right;
+}
+
+.add-task-form, .add-task-dialog-headers{
+    text-align: center;
+}

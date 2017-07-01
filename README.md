@@ -1,11 +1,72 @@
 # Task Manager
+<a href="https://codeclimate.com/github/codeclimate/codeclimate"><img src="https://codeclimate.com/github/tanvir002700/taskManager/badges/gpa.svg" /></a>
 
-Simple task manager app. Develop with react/redux.
+Simple task manager project.
 
 ## Getting Started
 
-This is a simple task management react project.
-Use redux in this project for save state easily and Use sfcookie for save task in brower cookie.
+This is a simple react.js task management react project.
+User can create task with title, description and deadline. And mark it as complete.
+Also can delete tasks.
+
+### Project structure
+This project is **Organize by feature**. All feature contain in module folder.
+
+Maintaining **strict module boundaries** all public api export with index.js.
+
+All common component of project keep in src/component folder.
+
+### Project screenshot
+<img src="./demo0.png" width="300" height="200"> '
+<img src="./demo1.png" width="300" height="200">
+
+
+### Project source structure
+ following structure maintain for redux integration:
+ ```
+    src
+    ├── assets
+    │   ├── images
+    │   │   └── logo.svg
+    │   └── stylesheets
+    │       ├── app.css
+    │       ├── header.css
+    │       └── index.css
+    ├── components
+    │   ├── app.jsx
+    │   └── header.jsx
+    ├── index.js
+    ├── modules
+    │   └── tasks
+    │       ├── action_types.js
+    │       ├── actions.js
+    │       ├── assets
+    │       │   └── stylesheets
+    │       │       ├── add_task.css
+    │       │       ├── task_canvas.css
+    │       │       └── task_statistics.css
+    │       ├── components
+    │       │   ├── active_tasks_list.jsx
+    │       │   ├── add_tasks.jsx
+    │       │   ├── all_tasks_list.jsx
+    │       │   ├── complete_tasks_list.jsx
+    │       │   ├── index.js
+    │       │   ├── task_canvas.jsx
+    │       │   ├── task_item.jsx
+    │       │   └── task_statistics.jsx
+    │       ├── constants.js
+    │       ├── index.js
+    │       ├── model.js
+    │       ├── reducer.js
+    │       └── selectors.js
+    └── root_reducer.js
+ ```
+
+### Major npm packages
+* redux - Using for container state management.
+* reselect - Using for create query selector of redux state.
+* sfcookies - Using for save state data in browser cookie.
+* material-ui - Using for UI design.
 
 ### Prerequisites
 
@@ -23,30 +84,19 @@ For transform bundle js run:
         $ npm run create
     ```
 
-### Project source structure
- following structure maintain for redux integration:
- ```
-    src
-    ├── actions
-    │   ├── active_task_acton.js
-    │   ├── add_task_action.js
-    │   ├── complete_task_action.js
-    │   └── delete_task_action.js
-    ├── assets
-    │   └── stylesheets
-    │       └── app.css
-    ├── components
-    │   ├── add_task.jsx
-    │   ├── all_task_list.jsx
-    │   ├── app.jsx
-    │   └── complete_task_list.jsx
-    ├── constants.js
-    ├── index.css
-    ├── index.js
-    ├── logo.svg
-    └── reducers
-        ├── index.js
-        └── task_reducer.js
+Run project:
+    ```
+        $ npm start
+    ```
 
+## Authors
 
- ```
+* **Tanvir Hasan** - *Initial work* - [tanvir002700](https://github.com/tanvir002700)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* *Three Rules For Structuring (Redux) Applications* - [Jack Hsu, Blog Link](https://jaysoo.ca/2016/02/28/organizing-redux-application/)
