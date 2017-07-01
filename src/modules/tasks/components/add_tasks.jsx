@@ -28,8 +28,9 @@ class AddTasks extends Component {
     };
 
     addTask() {
-        this.props.add({title: this.state.title, description: ''});
+        this.props.add({title: this.state.title, description: this.state.description});
         this.setState({title: ''});
+        this.setState({description: ''});
     }
 
     renderAddTaskForm() {
@@ -52,6 +53,8 @@ class AddTasks extends Component {
                         multiLine={true}
                         floatingLabelFixed={false}
                         rows={2}
+                        onChange={event => this.setState({description: event.target.value})}
+                        value={this.state.description}
                     />
                 </div>
 
