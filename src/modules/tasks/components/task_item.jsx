@@ -46,6 +46,8 @@ class TaskItem extends Component {
                     subtitle={`Dead Line: ${String(task.dead_line)}`}
                     actAsExpander={true}
                     showExpandableButton={true}
+                    subtitleColor="green"
+                    titleColor="blue"
                 />
                 <CardActions>
                     {deleteButton}

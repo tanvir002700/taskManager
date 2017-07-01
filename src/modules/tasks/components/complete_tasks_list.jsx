@@ -20,7 +20,7 @@ class CompleteTasksList extends Component {
         return(
             <div>
                 <TaskStatistics/>
-                <h2>Render from All Complete Task List</h2>
+                <h2>Complete Tasks List</h2>
                 {
                     complete_tasks.map((task,key) => {
                         return (

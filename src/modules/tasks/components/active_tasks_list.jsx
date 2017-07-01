@@ -20,7 +20,7 @@ class ActiveTasksList extends Component {
         return(
             <div>
                 <TaskStatistics/>
-                <h2>All Active Task List</h2>
+                <h2>Active Tasks List</h2>
                 {
                     active_tasks.map((task,key) => {
                         return (
