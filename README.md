@@ -12,7 +12,7 @@ Also can delete tasks.
 ### Project structure
 This project is **Organize by feature**. All feature contain in module folder.
 
-Maintaining **strict module boundaries** all public api export with index.js.
+For maintaining **strict module boundaries** all public api export with index.js.
 
 All common component of project keep in src/component folder.
 
