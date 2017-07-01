@@ -1,10 +1,10 @@
 import * as t from './action_types';
 
-export const add = (text) => {
-    console.log('Came for trigger action:');
+export const add = (task) => {
+    console.log('Came for trigger action:', task);
     return {
         type: t.ADD,
-        payload: text
+        payload: task
     };
 };
 

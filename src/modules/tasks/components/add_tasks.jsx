@@ -13,7 +13,8 @@ class AddTasks extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            task: '',
+            title: '',
+            description: '',
             formOpen: false
         }
     }
@@ -27,8 +28,8 @@ class AddTasks extends Component {
     };
 
     addTask() {
-        this.props.add(this.state.task);
-        this.setState({task: ''});
+        this.props.add({title: this.state.title, description: ''});
+        this.setState({title: ''});
     }
 
     renderAddTaskForm() {
@@ -39,8 +40,8 @@ class AddTasks extends Component {
                         hintText="Title"
                         floatingLabelText="Add your task Title"
                         floatingLabelFixed={false}
-                        onChange={event => this.setState({task: event.target.value})}
-                        value={this.state.task}
+                        onChange={event => this.setState({title: event.target.value})}
+                        value={this.state.title}
                     />
                 </div>
 

@@ -43,7 +43,7 @@ class TaskItem extends Component {
         return(
             <Card>
                 <CardHeader
-                    title={task.task}
+                    title={task.title}
                     subtitle="not implementated yet"
                     actAsExpander={true}
                     showExpandableButton={true}

@@ -1,12 +1,14 @@
 const taskObject = task => {
     return {
         id: Math.random(),
-        task: task,
+        title: task.title,
+        description: task.description,
         completed: 'false'
     };
 };
 
 export const create = (state, task) => {
+    console.log('Came here to create new Task , ', task);
     return [...state, taskObject(task)];
 }
 
