@@ -1,6 +1,3 @@
-import AddTasks from './add_tasks';
-import AllTasksList from './all_tasks_list';
-import ActiveTasksList from './active_tasks_list';
-import CompleteTasksList from './complete_tasks_list';
+import TaskCanvas from './task_canvas';
 
-export {AddTasks, AllTasksList, ActiveTasksList, CompleteTasksList};
+export {TaskCanvas};
