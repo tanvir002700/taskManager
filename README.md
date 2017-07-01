@@ -15,6 +15,11 @@ Maintaining **strict module boundaries** all public api export with index.js.
 
 All common component of project keep in src/component folder.
 
+### Project screenshot
+<img src="./demo0.png" width="200" height="100"> '
+<img src="./demo1.png" width="200" height="100">
+
+
 ### Project source structure
  following structure maintain for redux integration:
  ```
