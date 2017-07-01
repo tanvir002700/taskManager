@@ -4,6 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import { getCompleted } from '../selectors';
 import {complete, destroy} from '../actions';
 import TaskItem from './task_item';
+import TaskStatistics from './task_statistics';
 
 class CompleteTasksList extends Component {
     markComplete(id) {
@@ -19,6 +20,7 @@ class CompleteTasksList extends Component {
         console.log('Only active Task: ', this.props);
         return(
             <div>
+                <TaskStatistics/>
                 <h2>Render from All Complete Task List</h2>
                 {
                     complete_tasks.map((task,key) => {

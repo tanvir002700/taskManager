@@ -4,7 +4,6 @@ import {complete, destroy} from '../actions';
 import { createStructuredSelector } from 'reselect';
 import { getAll } from '../selectors';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
 class TaskItem extends Component {
@@ -31,7 +30,7 @@ class TaskItem extends Component {
         }
 
         let completeButton = null;
-        if(task.completed == 'false') {
+        if(task.completed === 'false') {
             completeButton = (
                 <RaisedButton
                     label="Complete"

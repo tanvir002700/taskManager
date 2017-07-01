@@ -1,32 +1,24 @@
 import React, {Component} from 'react';
 import Badge from 'material-ui/Badge';
-import IconButton from 'material-ui/IconButton';
-import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
+import { getCounts } from '../selectors';
+import {connect} from 'react-redux';
+import {createStructuredSelector} from 'reselect';
 import '../assets/stylesheets/task_statistics.css'
 
 class TaskStatistics extends Component {
-    state = {
-        selectedIndex: 0,
-    };
-
-
-    select = (index) => this.setState({selectedIndex: index});
 
     render() {
-        const style = {
-            width: 100,
-            float: 'right'
-        }
+        console.log('Map state to props Statistics: ', this.props);
         return (
             <div className="task-statistics">
                 <Badge
-                    badgeContent={4}
+                    badgeContent={this.props.task_count.active}
                     primary={true}
                 >
                     Active
                 </Badge>
                 <Badge
-                    badgeContent={10}
+                    badgeContent={this.props.task_count.completed}
                     secondary={true}
                 >Complete
                 </Badge>
@@ -35,4 +27,10 @@ class TaskStatistics extends Component {
     }
 }
 
-export default TaskStatistics;
+function mapStateToProps() {
+    return createStructuredSelector({
+        task_count: getCounts
+    });
+}
+
+export default connect(mapStateToProps,null)(TaskStatistics);

@@ -5,7 +5,6 @@ import { getAll } from '../selectors';
 import {complete, destroy} from '../actions';
 import TaskItem from './task_item';
 import TaskStatistics from './task_statistics';
-import {Row, Col} from 'react-bootstrap';
 
 class AllTasksList extends Component {
 
