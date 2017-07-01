@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import AppBar from 'material-ui/AppBar';
-import '../assets/stylesheets/header.css';
 
 const style = {
-    position: 'fixed'
+    position: 'fixed',
+    background: 'black',
+    textAlign: 'center',
+    fontSize: '30px'
 }
 
 class Header extends Component {
