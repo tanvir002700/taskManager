@@ -46,9 +46,9 @@ class App extends Component {
                             onChange={this.handleChange}
                             value={this.state.slideIndex}
                         >
-                            <Tab label="Tab One" value={0} />
-                            <Tab label="Tab Two" value={1} />
-                            <Tab label="Tab Three" value={2} />
+                            <Tab label="All Tasks" value={0} />
+                            <Tab label="Active Tasks" value={1} />
+                            <Tab label="Complete Tasks" value={2} />
                         </Tabs>
                         <SwipeableViews
                             index={this.state.slideIndex}

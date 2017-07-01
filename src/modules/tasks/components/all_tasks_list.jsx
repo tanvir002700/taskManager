@@ -4,8 +4,8 @@ import { createStructuredSelector } from 'reselect';
 import { getAll } from '../selectors';
 import {complete, destroy} from '../actions';
 import TaskItem from './task_item';
-import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import TaskStatistics from './task_statistics';
+import {Row, Col} from 'react-bootstrap';
 
 class AllTasksList extends Component {
 
@@ -14,8 +14,8 @@ class AllTasksList extends Component {
         console.log("task list render from: ", this.props);
         return(
             <div>
-                <h2>Render from All Task List</h2>
-                <h1>count {tasks.length}</h1>
+                <TaskStatistics/>
+                <h2>All Task List</h2>
                 {
                     tasks.map((task,key) => {
                         return (
