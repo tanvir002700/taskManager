@@ -5,8 +5,9 @@ Simple task manager project.
 
 ## Getting Started
 
-This is a simple react.js task management react project. User can create task with title,
-description and deadline. And mark it as complete. Also can delete.
+This is a simple react.js task management react project.
+User can create task with title, description and deadline. And mark it as complete.
+Also can delete tasks.
 
 ### Project structure
 This project is **Organize by feature**. All feature contain in module folder.
@@ -16,8 +17,8 @@ Maintaining **strict module boundaries** all public api export with index.js.
 All common component of project keep in src/component folder.
 
 ### Project screenshot
-<img src="./demo0.png" width="200" height="100"> '
-<img src="./demo1.png" width="200" height="100">
+<img src="./demo0.png" width="300" height="200"> '
+<img src="./demo1.png" width="300" height="200">
 
 
 ### Project source structure
@@ -83,3 +84,19 @@ For transform bundle js run:
         $ npm run create
     ```
 
+Run project:
+    ```
+        $ npm start
+    ```
+
+## Authors
+
+* **Tanvir Hasan** - *Initial work* - [tanvir002700](https://github.com/tanvir002700)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* *Three Rules For Structuring (Redux) Applications* - [Jack Hsu, Blog Link](https://jaysoo.ca/2016/02/28/organizing-redux-application/)
