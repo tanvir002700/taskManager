@@ -8,7 +8,6 @@ import '../assets/stylesheets/task_statistics.css'
 class TaskStatistics extends Component {
 
     render() {
-        console.log('Map state to props Statistics: ', this.props);
         return (
             <div className="task-statistics">
                 <Badge

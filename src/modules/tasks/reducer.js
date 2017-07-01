@@ -7,9 +7,7 @@ export default (state = Task.initial_state, action) => {
     state = read_cookie('tasks');
     switch (action.type) {
         case t.ADD:
-            console.log('State before update', state);
             new_state = Task.create(state, action.payload);
-            console.log('State after update', new_state);
             break;
         case t.COMPLETE:
             new_state = Task.makeComplete(state, action.payload);

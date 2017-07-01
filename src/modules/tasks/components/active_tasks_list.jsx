@@ -17,7 +17,6 @@ class ActiveTasksList extends Component {
 
     render() {
         const {active_tasks} = this.props;
-        console.log('Only active Task: ', this.props);
         return(
             <div>
                 <TaskStatistics/>

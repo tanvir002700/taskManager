@@ -8,7 +8,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 class TaskItem extends Component {
     markComplete(id) {
-        console.log('Task id: ', id);
         this.props.complete(id);
     }
 

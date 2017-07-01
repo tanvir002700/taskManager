@@ -1,7 +1,6 @@
 import * as t from './action_types';
 
 export const add = (task) => {
-    console.log('Came for trigger action:', task);
     return {
         type: t.ADD,
         payload: task

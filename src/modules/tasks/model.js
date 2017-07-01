@@ -9,7 +9,6 @@ const taskObject = task => {
 };
 
 export const create = (state, task) => {
-    console.log('Came here to create new Task , ', task);
     return [...state, taskObject(task)];
 }
 

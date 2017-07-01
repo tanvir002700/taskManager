@@ -10,7 +10,6 @@ class AllTasksList extends Component {
 
     render() {
         const {tasks} = this.props;
-        console.log("task list render from: ", this.props);
         return(
             <div>
                 <TaskStatistics/>
