@@ -4,6 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Header from './header';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
+import '../assets/stylesheets/app.css';
 
 const {AddTasks, AllTasksList, ActiveTasksList, CompleteTasksList} = tasks.components;
 
@@ -40,29 +41,31 @@ class App extends Component {
 
                     <Header/>
 
-                    <Tabs
-                        onChange={this.handleChange}
-                        value={this.state.slideIndex}
-                    >
-                        <Tab label="Tab One" value={0} />
-                        <Tab label="Tab Two" value={1} />
-                        <Tab label="Tab Three" value={2} />
-                    </Tabs>
-                    <SwipeableViews
-                        index={this.state.slideIndex}
-                        onChangeIndex={this.handleChange}
-                    >
-                        <div>
-                            <AddTasks/>
-                            <AllTasksList/>
-                        </div>
-                        <div style={styles.slide}>
-                            <ActiveTasksList/>
-                        </div>
-                        <div style={styles.slide}>
-                            <CompleteTasksList/>
-                        </div>
-                    </SwipeableViews>
+                    <div className="task-canvas">
+                        <Tabs
+                            onChange={this.handleChange}
+                            value={this.state.slideIndex}
+                        >
+                            <Tab label="Tab One" value={0} />
+                            <Tab label="Tab Two" value={1} />
+                            <Tab label="Tab Three" value={2} />
+                        </Tabs>
+                        <SwipeableViews
+                            index={this.state.slideIndex}
+                            onChangeIndex={this.handleChange}
+                        >
+                            <div>
+                                <AddTasks/>
+                                <AllTasksList/>
+                            </div>
+                            <div style={styles.slide}>
+                                <ActiveTasksList/>
+                            </div>
+                            <div style={styles.slide}>
+                                <CompleteTasksList/>
+                            </div>
+                        </SwipeableViews>
+                    </div>
                 </div>
             </MuiThemeProvider>
         );
