@@ -3,6 +3,7 @@ const taskObject = task => {
         id: Math.random(),
         title: task.title,
         description: task.description,
+        dead_line: task.dead_line,
         completed: 'false'
     };
 };

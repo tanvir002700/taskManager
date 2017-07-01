@@ -44,7 +44,7 @@ class TaskItem extends Component {
             <Card>
                 <CardHeader
                     title={task.title}
-                    subtitle="not implementated yet"
+                    subtitle={`Dead Line: ${String(task.dead_line)}`}
                     actAsExpander={true}
                     showExpandableButton={true}
                 />

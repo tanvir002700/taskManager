@@ -15,6 +15,7 @@ class AddTasks extends Component {
         this.state = {
             title: '',
             description: '',
+            dead_line: 'Not Set Yet',
             formOpen: false
         }
     }
@@ -28,7 +29,14 @@ class AddTasks extends Component {
     };
 
     addTask() {
-        this.props.add({title: this.state.title, description: this.state.description});
+        this.props.add(
+            {
+                title: this.state.title,
+                description: this.state.description,
+                dead_line: this.state.dead_line
+            }
+        );
+
         this.setState({title: ''});
         this.setState({description: ''});
     }
@@ -59,7 +67,11 @@ class AddTasks extends Component {
                 </div>
 
                 <div>
-                    <DatePicker hintText="Landscape Dialog" mode="landscape" />
+                    <DatePicker
+                        hintText="Landscape Dialog"
+                        mode="landscape"
+                        onChange={(event, x) => this.setState({dead_line: new Date(x)})}
+                    />
                 </div>
             </div>
         );
